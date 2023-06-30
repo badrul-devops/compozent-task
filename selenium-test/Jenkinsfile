@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/badrul-devops/compozent-task'
+            }
+        }
+              
+        stage('Test') {
+            steps {
+                sh 'cd selenium-test'
+                sh 'mvn clean test'
+            }
+        }
+        stage('docker build') {
+            steps {
+                sh 'cd selenium-test'
+                sh 'docker build -t badrul11/selenium-test .'
+            }
+        }
+    }
+}
