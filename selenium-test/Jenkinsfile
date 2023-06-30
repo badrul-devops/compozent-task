@@ -10,7 +10,7 @@ pipeline {
               
         stage('Test') {
             steps  { 
-                dir('/selenium-test'){
+                dir('compozent-task/selenium-test/'){
                 
                 sh 'mvn clean test'
                 }
