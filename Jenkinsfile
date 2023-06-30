@@ -10,12 +10,11 @@ pipeline {
               
         stage('Test') {
             steps  { 
-                dir('compozent-task/selenium-test/'){
                 
                 sh 'mvn clean test'
                 }
             }
-        }
+        
         stage('docker build') {
             steps {
                 sh 'cd selenium-test'
