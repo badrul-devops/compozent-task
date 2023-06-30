@@ -9,9 +9,11 @@ pipeline {
         }
               
         stage('Test') {
-            steps {
-                sh 'cd selenium-test'
+            steps  { 
+                dir('/selenium-test'){
+                
                 sh 'mvn clean test'
+                }
             }
         }
         stage('docker build') {
