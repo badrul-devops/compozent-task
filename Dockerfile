@@ -18,7 +18,7 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the built artifacts from the builder stage
-COPY --from=builder /app/target/selenium-test.jar .
+COPY --from=builder /app/target/selenium-test-1.0-SNAPSHOT.jar .
 
 # Set the entry point to run the Selenium tests
-CMD ["java", "-jar", "selenium-test.jar"]
+CMD ["java", "-jar", "selenium-test-1.0-SNAPSHOT.jar"]
