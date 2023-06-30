@@ -17,7 +17,7 @@ pipeline {
         
         stage('docker build') {
             steps {
-                sh 'cd selenium-test'
+    
                 sh 'docker build -t badrul11/selenium-test .'
             }
         }
